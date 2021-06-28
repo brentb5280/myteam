@@ -12,7 +12,7 @@ const renderHTML = require("generateHTML");
 
 
 
-// Questions array for all employees
+// Questions for all employees
 const questions = [           
     {
         type: "input",
@@ -37,7 +37,7 @@ const questions = [
     }
     ]
 
-    // Questions for manager role
+    // Questions for manager 
     managerQuestions = [
         {
             type: "input",
@@ -54,7 +54,6 @@ const questions = [
         }
     ]
 
-    // Questions for engineer role
     engineerQuestions = [
         {
             type: "input",
@@ -71,7 +70,7 @@ const questions = [
         }
     ]
 
-    // Questions for intern role
+    // Questions for intern 
     internQuestions = [
 
         {
@@ -112,7 +111,7 @@ const questions = [
         }
     };   
 
-    // Function to create new employees
+ //New Employee
     const newEmployee = async () => {
         await inquirer.prompt(questions)
           .then((response) => {
@@ -153,7 +152,7 @@ const questions = [
     
     };
 
-    // Function that asks if you would like to add an employee. This will keep coming up until you are finished. When you're finished and say no, it will generate the index.html file
+   
     const addEmployee = async (array) => {
        await inquirer
         .prompt({
@@ -167,20 +166,19 @@ const questions = [
                 newEmployee();
             } 
             else if (await createEmployee === false) {
-            // If the dist directory does not exist, then it creates the dist directory before creating the index.html file
+            
             if (!fs.existsSync(fileDirectory)) {
                 fs.mkdirSync(fileDirectory)
             }
 
-            // calls the renderHTML function in the generateHTML.js file to create the index.html
-            
+                       
             fs.writeFile(filePath, renderHTML(array), (err) => {
         
                 if (err) {
                     return console.log(err);
                 }
                 
-                // Success message
+                
                 console.log("Your index.html file has been created in the 'dist' folder!");
             });
 
