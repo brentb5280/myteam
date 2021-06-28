@@ -1,0 +1,22 @@
+{
+  "name": "myteam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brentb5280/myteam.git"
+  },
+  "author": "brent",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brentb5280/myteam/issues"
+  },
+  "homepage": "https://github.com/brentb5280/myteam#readme",
+  "devDependencies": {
+    "jest": "^27.0.5"
+  }
+}
